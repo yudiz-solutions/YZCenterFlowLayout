@@ -1,3 +1,7 @@
+# Preview
+
+![Demo](https://github.com/yudiz-solutions/SJCenterFlowLayout/blob/master/Screenshot/preview.gif)
+
 ## Features
 * Animate cell scale while scrolling
 * Rotate cell while scrolling
@@ -30,6 +34,7 @@ Set the UICollectionView layout class to `SJCenterFlowLayout`, and set its itemS
 ### Properties
 
 * `animationMode` (default is scale with sideItemScale between 0 and 1, default is 0.7, sideItemAlpha: between 0 and 1, default is 0.6, sideItemShift: value in pixels, default is 0)
+
 *Can be set only through code.*
  * `SJCenterFlowLayoutAnimation.scale(sideItemScale: 0.7, sideItemAlpha: 0.6, sideItemShift: 0.0)`
 
