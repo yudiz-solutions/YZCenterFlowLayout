@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 class CategoryColCell: UICollectionViewCell {
-    @IBOutlet var lblTitle: UILabel!
+    @IBOutlet var imgv: UIImageView!
 }

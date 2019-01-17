@@ -18,7 +18,6 @@ enum SJCenterFlowLayoutSpacingMode {
 enum SJCenterFlowLayoutAnimation {
     case rotation(sideItemAngle: CGFloat, sideItemAlpha: CGFloat, sideItemShift: CGFloat)
     case scale(sideItemScale: CGFloat, sideItemAlpha: CGFloat, sideItemShift: CGFloat)
-    case none
 }
 
 class SJCenterFlowLayout: UICollectionViewFlowLayout {
@@ -208,9 +207,6 @@ private extension SJCenterFlowLayout {
             attributes.transform3D = CATransform3DScale(CATransform3DIdentity, scale, scale, 1)
             attributes.zIndex = Int(alpha * 10)
             
-            break
-            
-        default:
             break
         }
         let shift = (1 - ratio) * sideItemShift
