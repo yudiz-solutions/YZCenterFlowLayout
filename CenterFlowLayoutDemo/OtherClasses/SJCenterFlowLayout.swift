@@ -188,12 +188,12 @@ private extension SJCenterFlowLayout {
             sideItemShift = shift
             let alpha = ratio * (1 - sideItemAlpha) + sideItemAlpha
             attributes.alpha = alpha
-            var offsetX =  (collectionCenter + offset) - attributes.center.x
+            var offsetX =  (collectionCenter + offset) - (normalizedCenter + offset)
             if offsetX < 0 {
                 offsetX *= -1
             }
             if offsetX > 0 {
-                let offsetPercentage = offsetX / collectionView.bounds.width
+                let offsetPercentage = offsetX / (collectionCenter * 2)
                 let rotation = (1 - offsetPercentage) - sideItemAngle
                 attributes.transform = CGAffineTransform(rotationAngle: rotation)
             }
