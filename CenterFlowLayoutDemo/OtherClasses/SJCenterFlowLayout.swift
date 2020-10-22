@@ -205,7 +205,12 @@ private extension SJCenterFlowLayout {
             let scale = ratio * (1 - sideItemScale) + sideItemScale
             attributes.alpha = alpha
             attributes.transform3D = CATransform3DScale(CATransform3DIdentity, scale, scale, 1)
-            attributes.zIndex = Int(alpha * 10)
+// If side Item alpha 1 then manage zindex based on a scale
+           if sideItemAlpha == 1 {
+                attributes.zIndex = Int(scale * 10)
+            }else {
+                attributes.zIndex = Int(alpha * 10)
+            }
             
             break
         }
