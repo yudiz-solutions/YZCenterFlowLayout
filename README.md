@@ -64,7 +64,36 @@ centerFlowLayout.animationMode = SJCenterFlowLayoutAnimation.rotation(sideItemAn
 ```
 * Set the rotation angle, alpha of collectionView as per your need 
 
+#### Detect current indexPath or page while scrolling
+* If you continue to track which current(center) indexPath then use scrollViewDidScroll delegate method. This method called on any offset changes. 
+```
+func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let indexPath = centerFlowLayout.currentCenteredIndexPath {
+            print("Current IndexPath: \(indexPath)")
+        }
+        if let page = centerFlowLayout.currentCenteredPage {
+            print("Current Page: \(page)")
+        }
+    }
+```
+* After scrolling end with left or right then you can use the scrollViewDidEndDecelerating delegate method. This method called when scroll view grinds to a halt.
+```
+// 
+func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if let indexPath = centerFlowLayout.currentCenteredIndexPath {
+            print("Current IndexPath: \(indexPath)")
+        }
+        if let page = centerFlowLayout.currentCenteredPage {
+            print("Current Page: \(page)")
+        }
+    }
+```
 
+#### Scroll to specifc index
+`scrollToPage(atIndex index: Int, animated: Bool = true)` method use to scroll specific index. 
+```
+centerFlowLayout.scrollToPage(atIndex: 2, animated: true)
+```
 
 ## Author
 **Sandeep Joshi** - https://github.com/yudiz-solutions
