@@ -11,8 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     
-    var centerFlowLayout: SJCenterFlowLayout {
-        return collectionView.collectionViewLayout as! SJCenterFlowLayout
+    var centerFlowLayout: YZCenterFlowLayout {
+        return collectionView.collectionViewLayout as! YZCenterFlowLayout
     }
     var scrollToEdgeEnabled: Bool = true
     
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
             height:  view.bounds.height * 0.3
         )
         
-        centerFlowLayout.animationMode = SJCenterFlowLayoutAnimation.scale(sideItemScale: 0.6, sideItemAlpha: 0.6, sideItemShift: 0.0)
+        centerFlowLayout.animationMode = YZCenterFlowLayoutAnimation.scale(sideItemScale: 0.6, sideItemAlpha: 0.6, sideItemShift: 0.0)
      }
 }
 
@@ -34,9 +34,9 @@ extension ViewController {
         switch sender.tag {
         case 1:
             if sender.isOn {
-                centerFlowLayout.animationMode =  SJCenterFlowLayoutAnimation.rotation(sideItemAngle: 45, sideItemAlpha: 1, sideItemShift: 0)
+                centerFlowLayout.animationMode =  YZCenterFlowLayoutAnimation.rotation(sideItemAngle: 45, sideItemAlpha: 1, sideItemShift: 0)
             }else{
-                centerFlowLayout.animationMode = SJCenterFlowLayoutAnimation.scale(sideItemScale: 0.6, sideItemAlpha: 0.6, sideItemShift: 0.0)
+                centerFlowLayout.animationMode = YZCenterFlowLayoutAnimation.scale(sideItemScale: 0.6, sideItemAlpha: 0.6, sideItemShift: 0.0)
             }
         collectionView.reloadData()
             break

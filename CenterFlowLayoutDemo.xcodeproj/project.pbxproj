@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,7 @@
 		0351100021EF52EF00EE599B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03510FFE21EF52EF00EE599B /* Main.storyboard */; };
 		0351100221EF52F100EE599B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0351100121EF52F100EE599B /* Assets.xcassets */; };
 		0351100521EF52F100EE599B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0351100321EF52F100EE599B /* LaunchScreen.storyboard */; };
-		0351101321EF537D00EE599B /* SJCenterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351101221EF537D00EE599B /* SJCenterFlowLayout.swift */; };
+		0351101321EF537D00EE599B /* YZCenterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351101221EF537D00EE599B /* YZCenterFlowLayout.swift */; };
 		0351101521EF629B00EE599B /* CategoryColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351101421EF629B00EE599B /* CategoryColCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +24,7 @@
 		0351100121EF52F100EE599B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0351100421EF52F100EE599B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0351100621EF52F100EE599B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0351101221EF537D00EE599B /* SJCenterFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SJCenterFlowLayout.swift; sourceTree = "<group>"; };
+		0351101221EF537D00EE599B /* YZCenterFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YZCenterFlowLayout.swift; sourceTree = "<group>"; };
 		0351101421EF629B00EE599B /* CategoryColCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,7 +113,7 @@
 		0351101121EF533E00EE599B /* OtherClasses */ = {
 			isa = PBXGroup;
 			children = (
-				0351101221EF537D00EE599B /* SJCenterFlowLayout.swift */,
+				0351101221EF537D00EE599B /* YZCenterFlowLayout.swift */,
 			);
 			path = OtherClasses;
 			sourceTree = "<group>";
@@ -144,12 +144,14 @@
 		03510FEF21EF52EF00EE599B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "Yudiz Solutions";
 				TargetAttributes = {
 					03510FF621EF52EF00EE599B = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = "";
 					};
 				};
 			};
@@ -191,7 +193,7 @@
 			files = (
 				0351101521EF629B00EE599B /* CategoryColCell.swift in Sources */,
 				03510FFD21EF52EF00EE599B /* ViewController.swift in Sources */,
-				0351101321EF537D00EE599B /* SJCenterFlowLayout.swift in Sources */,
+				0351101321EF537D00EE599B /* YZCenterFlowLayout.swift in Sources */,
 				03510FFB21EF52EF00EE599B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +246,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -255,6 +258,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -305,6 +309,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -316,6 +321,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -341,6 +347,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 5GL3E4GW7P;
 				INFOPLIST_FILE = CenterFlowLayoutDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,7 +355,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yudiz.CenterFlowLayoutDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "iPhone WiledCard";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -360,6 +367,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 5GL3E4GW7P;
 				INFOPLIST_FILE = CenterFlowLayoutDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,7 +375,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yudiz.CenterFlowLayoutDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "iPhone WiledCard";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

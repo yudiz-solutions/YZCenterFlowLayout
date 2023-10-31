@@ -1,5 +1,5 @@
 //
-//  SJCenterFlowLayout.swift
+//  YZCenterFlowLayout.swift
 //  CenterFlowLayoutDemo
 //
 //  Created by Yudiz Solutions on 16/01/19.
@@ -10,17 +10,17 @@ import Foundation
 import UIKit
 
 
-enum SJCenterFlowLayoutSpacingMode {
+enum YZCenterFlowLayoutSpacingMode {
     case fixed(spacing: CGFloat)
     case overlap(visibleOffset: CGFloat)
 }
 
-enum SJCenterFlowLayoutAnimation {
+enum YZCenterFlowLayoutAnimation {
     case rotation(sideItemAngle: CGFloat, sideItemAlpha: CGFloat, sideItemShift: CGFloat)
     case scale(sideItemScale: CGFloat, sideItemAlpha: CGFloat, sideItemShift: CGFloat)
 }
 
-class SJCenterFlowLayout: UICollectionViewFlowLayout {
+class YZCenterFlowLayout: UICollectionViewFlowLayout {
     
     fileprivate struct LayoutState {
         var size: CGSize
@@ -31,14 +31,16 @@ class SJCenterFlowLayout: UICollectionViewFlowLayout {
         }
     }
     fileprivate var state = LayoutState(size: CGSize.zero, direction: .horizontal)
-    var spacingMode = SJCenterFlowLayoutSpacingMode.fixed(spacing: 0)
-    var animationMode = SJCenterFlowLayoutAnimation.scale(sideItemScale: 0.7, sideItemAlpha: 0.6, sideItemShift: 0.0)
+    var spacingMode = YZCenterFlowLayoutSpacingMode.fixed(spacing: 0)
+    var animationMode = YZCenterFlowLayoutAnimation.scale(sideItemScale: 0.7, sideItemAlpha: 0.6, sideItemShift: 0.0)
     fileprivate var pageWidth: CGFloat {
         switch self.scrollDirection {
         case .horizontal:
             return self.itemSize.width + self.minimumLineSpacing
         case .vertical:
             return self.itemSize.height + self.minimumLineSpacing
+        default:
+            return 0.0
         }
     }
     
@@ -117,19 +119,23 @@ class SJCenterFlowLayout: UICollectionViewFlowLayout {
             let pageOffset = CGFloat(index) * self.pageWidth - collectionView.contentInset.left
             proposedContentOffset = CGPoint(x: pageOffset, y: collectionView.contentOffset.y)
             shouldAnimate = abs(collectionView.contentOffset.x - pageOffset) > 1 ? animated : false
+            collectionView.setContentOffset(proposedContentOffset, animated: shouldAnimate)
             break
         case .vertical:
             let pageOffset = CGFloat(index) * self.pageWidth - collectionView.contentInset.top
             proposedContentOffset = CGPoint(x: collectionView.contentOffset.x, y: pageOffset)
             shouldAnimate = abs(collectionView.contentOffset.y - pageOffset) > 1 ? animated : false
+            collectionView.setContentOffset(proposedContentOffset, animated: shouldAnimate)
+            break
+        default:
+            print("Default Case...")
             break
         }
-        collectionView.setContentOffset(proposedContentOffset, animated: shouldAnimate)
     }
 }
 
 // MARK: - Private Methods
-private extension SJCenterFlowLayout {
+private extension YZCenterFlowLayout {
     
     func setupCollectionView() {
         guard let collectionView = self.collectionView else { return }
