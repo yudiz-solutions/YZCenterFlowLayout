@@ -1,6 +1,6 @@
 # Preview
 
-![Demo](https://github.com/yudiz-solutions/YZCenterFlowLayout/blob/master/Screenshot/preview.gif)
+![Demo](https://github.com/yudiz-solutions/SJCenterFlowLayout/blob/master/Screenshot/preview.gif)
 
 ## Features
 * Animate cell scale while scrolling
@@ -29,7 +29,7 @@ collectionView.collectionViewLayout = layout
 
 Set the UICollectionView layout class to `YZCenterFlowLayout`, and set its itemSize and its properties as given below
 
-![Alt text](https://github.com/yudiz-solutions/YZCenterFlowLayout/blob/master/Screenshot/screenshot_1.png "YZCenterFlowLayout-step1")
+![Alt text](https://github.com/yudiz-solutions/SJCenterFlowLayout/blob/master/Screenshot/screenshot_1.png "YZCenterFlowLayout-step1")
 
 ### Properties
 
